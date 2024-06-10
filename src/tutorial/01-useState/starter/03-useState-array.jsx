@@ -8,6 +8,9 @@ const UseStateArray = () => {
     let newPeople = people.filter((person) => person.id !== id);
     setPeople(newPeople);
   };
+  const clearAllItems = () => {
+    setPeople([]);
+  };
   return (
     <div>
       {people.map((person) => {
@@ -26,6 +29,9 @@ const UseStateArray = () => {
           </div>
         );
       })}
+      <button type="button" className="btn" onClick={clearAllItems}>
+        Clear All Items
+      </button>
     </div>
   );
 };
